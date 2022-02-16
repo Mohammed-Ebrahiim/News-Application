@@ -1,0 +1,26 @@
+<!-- header -->
+{{>header}}
+
+<div class="container">
+    <div class="row">
+        {{!-- for loop the card --}}
+        {{#each data}} 
+        {{!-- bootstrap card --}}
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+            <div class="card h-100">
+                <!-- Here response.body.articles refer to this -->
+                <img src={{this.urlToImage}} class="card-img-top img-fluid" alt="image failed to load">
+                <div class="card-body">
+                    <h4 class="card-title">{{this.title}}</h4>
+                    <p class="card-text">{{this.description}}</p>
+                </div>
+                <div class="text-muted">
+                    <h6 class="card-author">{{this.author}}</h6>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+<!-- footer -->
+{{>footer}}
